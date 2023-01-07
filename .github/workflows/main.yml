@@ -120,7 +120,7 @@ jobs:
       - name: /users/finger get lambda deploy zip
         uses: kinlane/mastodon-apievangelist@main
         with:
-            args: zip -qq -r m-s-usersfinger-po.zip users/finger/get/index.js node_modules
+            args: zip -qq -r m-s-usersfinger-g.zip users/finger/get/index.js node_modules
       - name: users get lambda deploy
         uses: appleboy/lambda-action@master
         with:
