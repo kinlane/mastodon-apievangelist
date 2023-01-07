@@ -22,7 +22,7 @@ jobs:
           CI: true
 
       - name: /users get lambda deploy zip
-        uses: kinlane/users@main
+        uses: kinlane/mastodon-apievangelist@main
         with:
             args: zip -qq -r m-s-users-g.zip users/get/index.js node_modules
       - name: user get lambda deploy
@@ -34,7 +34,7 @@ jobs:
             function_name: m-s-users-g
             zip_file: m-s-users-g.zip
       - name: /users post lambda deploy zip
-        uses: kinlane/users@main
+        uses: kinlane/mastodon-apievangelist@main
         with:
             args: zip -qq -r m-s-users-po.zip users/post/index.js node_modules
       - name: user get lambda deploy
@@ -46,7 +46,7 @@ jobs:
             function_name: m-s-users-po
             zip_file: m-s-users-po.zip
       - name: /users/{user_id} get lambda deploy zip
-        uses: kinlane/users@main
+        uses: kinlane/mastodon-apievangelist@main
         with:
             args: zip -qq -r m-s-users-user-g.zip users/user_id/get/index.js node_modules
       - name: user get lambda deploy
@@ -58,7 +58,7 @@ jobs:
             function_name: m-s-users-user-g
             zip_file: m-s-users-user-g.zip
       - name: /users/{user_id} put lambda deploy zip
-        uses: kinlane/users@main
+        uses: kinlane/mastodon-apievangelist@main
         with:
             args: zip -qq -r m-s-users-user-pu.zip users/user_id/put/index.js node_modules
       - name: user get lambda deploy
@@ -70,7 +70,7 @@ jobs:
             function_name: m-s-users-user-pu
             zip_file: m-s-users-user-pu.zip
       - name: /users/{user_id} delete lambda deploy zip
-        uses: kinlane/users@main
+        uses: kinlane/mastodon-apievangelist@main
         with:
             args: zip -qq -r m-s-users-user-d.zip users/user_id/delete/index.js node_modules
       - name: user get lambda deploy
@@ -82,7 +82,7 @@ jobs:
             function_name: m-s-users-user-d
             zip_file: m-s-users-user-d.zip          
       - name: /users/{user_id}/tags get lambda deploy zip
-        uses: kinlane/users@main
+        uses: kinlane/mastodon-apievangelist@main
         with:
             args: zip -qq -r m-s-users-user-tags-g.zip users/user_id/tags/get/index.js node_modules
       - name: users get lambda deploy
@@ -94,7 +94,7 @@ jobs:
             function_name: m-s-users-user-tags-g
             zip_file: m-s-users-user-tags-g.zip
       - name: /users/{user_id}/tags post lambda deploy zip
-        uses: kinlane/users@main
+        uses: kinlane/mastodon-apievangelist@main
         with:
             args: zip -qq -r m-s-users-user-tags-po.zip users/user_id/tags/post/index.js node_modules
       - name: users get lambda deploy
@@ -106,7 +106,7 @@ jobs:
             function_name: m-s-users-user-tags-po
             zip_file: m-s-users-user-tags-po.zip
       - name: /users/bulk get lambda deploy zip
-        uses: kinlane/users@main
+        uses: kinlane/mastodon-apievangelist@main
         with:
             args: zip -qq -r m-s-usersbulk-g.zip users/bulk/post/index.js node_modules
       - name: users get lambda deploy
