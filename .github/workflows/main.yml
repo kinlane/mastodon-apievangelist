@@ -108,13 +108,13 @@ jobs:
       - name: /users/bulk get lambda deploy zip
         uses: kinlane/mastodon-apievangelist@main
         with:
-            args: zip -qq -r m-s-usersbulk-g.zip users/bulk/post/index.js node_modules
+            args: zip -qq -r m-s-usersbulk-po.zip users/bulk/post/index.js node_modules
       - name: users get lambda deploy
         uses: appleboy/lambda-action@master
         with:
             aws_access_key_id: ${{secrets.AWS_ACCESS_KEY_ID}}
             aws_secret_access_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
             aws_region: us-east-1
-            function_name: m-s-usersbulk-g
-            zip_file: m-s-usersbulk-g.zip  
+            function_name: m-s-usersbulk-po
+            zip_file: m-s-usersbulk-po.zip  
                       
