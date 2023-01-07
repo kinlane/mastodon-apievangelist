@@ -20,7 +20,7 @@ exports.handler = vandium.generic()
     description = description.replace(/[^\w\s]/gi, '')
     description = description.replace(/([\u2700-\u27BF]|[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g, '');
 
-    var sql1 = "UPDATE users SET user_id=" + connection.escape(event.user.id) + ", account=" + connection.escape(event.user.account) + ",name=" + connection.escape(event.user.display_name) + ",description=" + connection.escape(description) + ",url=" + connection.escape(event.user.url) + ",avatar=" + connection.escape(event.user.avatar) + ",followers_count=" + connection.escape(event.user.followers_count) + ",following_count=" + connection.escape(event.user.following_count) + ",statuses_count=" + connection.escape(event.user.statuses_count) + ",fingered=1,profiled=1 WHERE account = " + connection.escape(event.user.account);
+    var sql1 = "UPDATE users SET user_id=" + connection.escape(event.user.id) + ", account=" + connection.escape(event.user.account) + ",name=" + connection.escape(event.user.display_name) + ",description=" + connection.escape(description) + ",url=" + connection.escape(event.user.url) + ",avatar=" + connection.escape(event.user.avatar) + ",followers_count=" + connection.escape(event.user.followers_count) + ",following_count=" + connection.escape(event.user.following_count) + ",statuses_count=" + connection.escape(event.user.statuses_count) + ",followed=1,profiled=1 WHERE account = " + connection.escape(event.user.account);
     connection.query(sql1, function (error, result, fields) {   
 
       callback( null, result );
