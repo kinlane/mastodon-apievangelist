@@ -192,7 +192,7 @@ jobs:
       - name: /topics/pull get lambda deploy zip
         uses: kinlane/mastodon-apievangelist@main
         with:
-          args: zip -qq -r m-s-topics-g.zip topics/pull/get/index.js node_modules
+          args: zip -qq -r m-s-topicspull-g.zip topics/pull/get/index.js node_modules
       - name: topic pull get lambda deploy
         uses: appleboy/lambda-action@master
         with:
