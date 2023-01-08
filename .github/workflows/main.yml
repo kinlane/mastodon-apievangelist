@@ -188,4 +188,28 @@ jobs:
           aws_secret_access_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           aws_region: us-east-1
           function_name: m-s-topics-po
-          zip_file: m-s-topics-po.zip                      
+          zip_file: m-s-topics-po.zip   
+      - name: /topics/pull get lambda deploy zip
+      uses: kinlane/mastodon-apievangelist@main
+      with:
+        args: zip -qq -r m-s-topics-g.zip topics/pull/get/index.js node_modules
+      - name: topic pull get lambda deploy
+      uses: appleboy/lambda-action@master
+      with:
+        aws_access_key_id: ${{secrets.AWS_ACCESS_KEY_ID}}
+        aws_secret_access_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+        aws_region: us-east-1
+        function_name: m-s-topics-pull-g
+        zip_file: m-s-topics-pull-g.zip
+      - name: /topics/pull post lambda deploy zip
+      uses: kinlane/mastodon-apievangelist@main
+      with:
+        args: zip -qq -r m-s-topics-pull-po.zip topics/pull/post/index.js node_modules
+      - name: topic pull get lambda deploy
+      uses: appleboy/lambda-action@master
+      with:
+        aws_access_key_id: ${{secrets.AWS_ACCESS_KEY_ID}}
+        aws_secret_access_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+        aws_region: us-east-1
+        function_name: m-s-topics-pull-po
+        zip_file: m-s-topics-pull-po.zip                              
